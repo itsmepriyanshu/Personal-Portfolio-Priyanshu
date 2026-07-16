@@ -773,3 +773,85 @@ footer > * { position: relative; z-index: 1; }
   .hero h1.title-track, .hero-copy, .scroll, .scroll-arrow, .float-element { animation: none; transform: none; }
   .hero-avatar { animation: none; transform: translateX(-50%); }
 }
+
+/* Responsive finishing layer — kept last so it takes precedence over the
+   decorative desktop treatments above. */
+@media (max-width: 640px) {
+  body { overflow-x: hidden; }
+
+  .hero {
+    height: 100svh;
+    min-height: 600px;
+    padding-inline: 5%;
+  }
+
+  .nav { top: 16px; width: calc(100% - 24px); justify-content: center; }
+  .nav a { padding: 7px clamp(7px, 2.8vw, 13px); font-size: 10px; }
+
+  .title-window { top: 16%; left: 5%; width: 90%; }
+  .hero h1.title-track {
+    flex-direction: column;
+    align-items: center;
+    gap: .02em;
+    font-size: clamp(39px, 10.4vw, 64px);
+    line-height: .78;
+    letter-spacing: -.09em;
+  }
+  .hero-label { top: 82px; left: 5%; }
+
+  .hero-avatar { width: min(58vw, 250px); height: min(88vw, 378px); bottom: -8px; }
+  .hero-copy { width: min(39vw, 175px); bottom: 24%; font-size: clamp(11px, 3.1vw, 14px); }
+  .left-copy { left: 5%; }
+  .right-copy { right: 5%; }
+  .float-dot-one { top: 35%; left: 8%; }
+  .float-dot-two { top: 42%; right: 8%; }
+  .float-ring { display: none; }
+  .hero-footer { left: 5%; bottom: 15px; font-size: 8px; }
+  .scroll { right: 5%; bottom: 13px; font-size: 10px; }
+  .scroll-arrow { font-size: 20px; }
+
+  .section { padding: 62px 6%; }
+  h2 { font-size: clamp(34px, 10vw, 54px); }
+  .intro, .faq { gap: 32px; }
+  .intro-content { gap: 22px; }
+  .about-art { height: min(95vw, 360px); }
+
+  .expertise .section-heading > p { margin: 24px 0 0; }
+  .skills-grid { margin-top: 34px; gap: 14px; }
+  .skills-grid article, .skills-grid article:nth-child(1), .skills-grid article:nth-child(3) { min-height: 230px; padding: 22px; }
+  .skills-grid h3 { margin-top: 68px; }
+
+  .work { margin-inline: 0; border-radius: 0; padding: 52px 6%; }
+  .work-head { gap: 24px; }
+  .outline-button { width: 100%; text-align: center; }
+  .project-grid { margin-top: 34px; gap: 30px; }
+  .mockup { height: min(60vw, 260px); }
+
+  .education { padding-top: 54px; }
+  .education-list article, .education-list article:nth-child(2), .education-list article:nth-child(3) { min-height: 235px; padding: 22px; }
+  .education-list article div { margin-top: 52px; }
+  .education-list h3 { font-size: clamp(25px, 7.5vw, 34px); }
+
+  .faq { margin: 18px 0; border-inline: 0; border-radius: 0; box-shadow: none; padding: 55px 6%; }
+  .faq h2 { font-size: clamp(43px, 12vw, 60px); }
+  .faq .accordion summary { padding-right: 45px; }
+  .faq .accordion p { margin-right: 22px; }
+
+  footer { padding: 65px 6% 24px; }
+  footer h2 { font-size: clamp(48px, 14vw, 74px); }
+  .footer-bottom { margin-top: 62px; }
+  .footer-email { font-size: clamp(19px, 6.8vw, 30px); overflow-wrap: anywhere; }
+  .footer-socials { width: 100%; gap: 8px !important; }
+  .footer-socials a { padding: 12px 14px; font-size: 14px; }
+  .footer-socials svg { width: 18px; height: 18px; }
+}
+
+@media (max-width: 480px) {
+  .nav { gap: 1px; }
+  .nav a { padding-inline: 7px; font-size: 9px; }
+  .hero-avatar { width: 66vw; height: 99vw; max-width: 225px; max-height: 338px; }
+  .hero-copy { display: none; }
+  .hero-label, .scroll { display: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .footer-socials a { width: 100%; justify-content: center; }
+}
